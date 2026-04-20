@@ -1,0 +1,19 @@
+algo: td3
+batch_size: 256
+buffer_size: 1000000
+env: HalfCheetah-v5
+eval_episodes: 10
+eval_freq: 10000
+exploration_noise: 0.3
+gamma: 0.99
+hidden_dims:
+- 256
+- 256
+learning_rate: 0.0003
+learning_starts: 25000
+policy_delay: 2
+seed: 1
+target_noise: 0.2
+target_noise_clip: 0.5
+tau: 0.005
+total_timesteps: 1000000

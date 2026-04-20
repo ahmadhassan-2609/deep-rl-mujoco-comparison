@@ -1,0 +1,30 @@
+# PPO default hyperparameters
+# Based on Schulman et al. 2017 "Proximal Policy Optimization Algorithms"
+
+algo: ppo
+
+# Network architecture
+hidden_dims: [256, 256]
+
+# Training
+learning_rate: 1.0e-4
+gamma: 0.99                    # discount factor
+gae_lambda: 0.95               # GAE lambda for advantage estimation
+
+# PPO-specific
+clip_range: 0.2                # epsilon for clipping the probability ratio
+n_epochs: 10                   # number of optimization epochs per rollout
+batch_size: 64                 # mini-batch size during update epochs
+rollout_length: 2048           # steps to collect per rollout before updating
+vf_coef: 0.5                   # value function loss coefficient
+ent_coef: 0.0                  # entropy bonus coefficient (0 = no bonus, increase for more exploration)
+max_grad_norm: 0.5             # gradient clipping
+clip_vloss: true               # clipped value loss (matches CleanRL; prevents critic from moving too far)
+norm_adv: true                 # per-mini-batch advantage normalisation
+anneal_lr: true                # linearly decay LR to 0 over total_timesteps
+target_kl: null                # KL early-stopping threshold (null = disabled)
+
+# Experiment
+total_timesteps: 1000000
+eval_freq: 10000
+eval_episodes: 10

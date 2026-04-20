@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Results — kept in repo for reproducibility (CSVs + model weights)
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Claude Code local state
+.claude/
+
+# Course-provided materials and old drafts — not for the public repo
+project_description.pdf
+Project Proposal.pdf
+PresentationScript.pdf
+Comparing Deep RL Algorithms for Continuous Locomotion Control in MuJoCo.docx
+Comparing Deep RL Algorithms for Continuous Locomotion Control in MuJoCo.pdf
+
+# AAAI author kit — redistributed separately by AAAI, not ours to ship
+report/aaai26-kit.zip
+report/AuthorKit26/
+
+# LaTeX build artifacts (keep main.pdf, drop everything else)
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz

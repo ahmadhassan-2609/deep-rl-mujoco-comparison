@@ -1,0 +1,20 @@
+# PPO clip range sensitivity sweep
+# Tests how sensitive PPO is to the clipping parameter epsilon
+
+algo: ppo
+sweep_param: clip_range
+sweep_values: [0.1, 0.2, 0.3, 0.4]
+
+hidden_dims: [256, 256]
+learning_rate: 3.0e-4
+gamma: 0.99
+gae_lambda: 0.95
+n_epochs: 10
+batch_size: 64
+rollout_length: 2048
+vf_coef: 0.5
+ent_coef: 0.0
+max_grad_norm: 0.5
+total_timesteps: 1000000
+eval_freq: 10000
+eval_episodes: 10

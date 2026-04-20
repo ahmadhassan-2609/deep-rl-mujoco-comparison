@@ -1,0 +1,25 @@
+# SAC default hyperparameters
+# Based on Haarnoja et al. 2018 "Soft Actor-Critic: Off-Policy Maximum Entropy Deep RL"
+
+algo: sac
+
+# Network architecture
+hidden_dims: [256, 256]
+
+# Training
+learning_rate: 3.0e-4          # same lr for actor, critics, and alpha
+gamma: 0.99                    # discount factor
+tau: 0.005                     # Polyak averaging for target critics
+batch_size: 256
+buffer_size: 1000000
+learning_starts: 5000          # SAC needs less warmup than TD3 (stochastic policy explores better)
+
+# SAC-specific
+auto_tune_alpha: true          # automatically tune entropy coefficient
+initial_alpha: 1.0             # starting value (matters more when auto_tune=false)
+# target_entropy is set automatically to -dim(action_space) during training
+
+# Experiment
+total_timesteps: 1000000
+eval_freq: 10000
+eval_episodes: 10

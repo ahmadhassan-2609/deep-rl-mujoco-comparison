@@ -1,0 +1,17 @@
+# SAC learning rate sensitivity sweep
+
+algo: sac
+sweep_param: learning_rate
+sweep_values: [1.0e-4, 3.0e-4, 1.0e-3]
+
+hidden_dims: [256, 256]
+gamma: 0.99
+tau: 0.005
+batch_size: 256
+buffer_size: 1000000
+learning_starts: 5000
+auto_tune_alpha: true
+initial_alpha: 1.0
+total_timesteps: 1000000
+eval_freq: 10000
+eval_episodes: 10

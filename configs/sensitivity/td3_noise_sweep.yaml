@@ -1,0 +1,21 @@
+# TD3 exploration noise sensitivity sweep
+# Tests how sensitive TD3 is to the exploration noise scale
+
+algo: td3
+sweep_param: exploration_noise
+sweep_values: [0.05, 0.1, 0.2, 0.3]
+
+# Base config (everything else stays at default)
+hidden_dims: [256, 256]
+learning_rate: 3.0e-4
+gamma: 0.99
+tau: 0.005
+batch_size: 256
+buffer_size: 1000000
+learning_starts: 25000
+target_noise: 0.2
+target_noise_clip: 0.5
+policy_delay: 2
+total_timesteps: 1000000
+eval_freq: 10000
+eval_episodes: 10

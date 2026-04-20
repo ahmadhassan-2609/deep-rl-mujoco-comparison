@@ -1,0 +1,26 @@
+# TD3 default hyperparameters
+# Based on Fujimoto et al. 2018 "Addressing Function Approximation Error in Actor-Critic Methods"
+
+algo: td3
+
+# Network architecture
+hidden_dims: [256, 256]
+
+# Training
+learning_rate: 3.0e-4          # same lr for actor and critic
+gamma: 0.99                    # discount factor
+tau: 0.005                     # Polyak averaging coefficient for target networks
+batch_size: 256
+buffer_size: 1000000
+learning_starts: 25000         # fill buffer with random actions before training
+
+# TD3-specific
+exploration_noise: 0.1         # std of Gaussian noise added during data collection
+target_noise: 0.2              # std of noise added to target actions (smoothing)
+target_noise_clip: 0.5         # clip target noise to [-c, c]
+policy_delay: 2                # update actor every d critic updates
+
+# Experiment
+total_timesteps: 1000000
+eval_freq: 10000               # evaluate every N environment steps
+eval_episodes: 10              # number of evaluation episodes to average over
