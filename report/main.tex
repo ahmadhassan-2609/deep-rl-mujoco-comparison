@@ -94,12 +94,14 @@ clipped value loss for PPO, automatic entropy tuning for SAC, and delayed
 policy updates with target policy smoothing for TD3.
 
 The contributions of this report are (i) a clean, fully open implementation
-of TD3, SAC, and PPO in a single codebase; (ii) learning curves on three
-MuJoCo locomotion environments averaged over five seeds, against a uniform
-random-policy lower bound; (iii) sample-efficiency and
-final-performance comparisons; and (iv) a hyperparameter sensitivity study
-on HalfCheetah covering the learning rate, TD3 exploration noise, SAC
-entropy coefficient, and PPO clip range.
+of TD3, SAC, and PPO in a single codebase;\footnote{Code, trained weights,
+training logs, and the source for this paper are available at
+\url{https://github.com/ahmadhassan-2609/deep-rl-mujoco-comparison}.} (ii)
+learning curves on three MuJoCo locomotion environments averaged over five
+seeds, against a uniform random-policy lower bound; (iii) sample-efficiency
+and final-performance comparisons; and (iv) a hyperparameter sensitivity
+study on HalfCheetah covering the learning rate, TD3 exploration noise,
+SAC entropy coefficient, and PPO clip range.
 
 \section{Related Work}
 
